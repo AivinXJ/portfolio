@@ -30,7 +30,7 @@ var vite_config_default = defineConfig({
     ] : []
   ],
   // Remove the trailing slash from the base path
-  base: "/",
+  base: "/portfolio",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
