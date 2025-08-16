@@ -29,7 +29,8 @@ var vite_config_default = defineConfig({
       )
     ] : []
   ],
-  base: "/portfolio/",
+  // Remove the trailing slash from the base path
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -40,7 +41,6 @@ var vite_config_default = defineConfig({
   root: path.resolve(import.meta.dirname, "client"),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
-    // 👈 Change this line
     emptyOutDir: true
   },
   server: {
@@ -48,6 +48,11 @@ var vite_config_default = defineConfig({
       strict: true,
       deny: ["**/.*"]
     }
+  },
+  preview: {
+    port: 4173,
+    strictPort: true,
+    open: true
   }
 });
 
